@@ -17,7 +17,7 @@ var app = new Vue({
     id: 0
   },
   methods: {
-    addItemToList: function () {
+    addItem: function () {
         this.id++
         this.todoList.push({id: this.id, text: this.todoItem})
         this.todoItem = ''
