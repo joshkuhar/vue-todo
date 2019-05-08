@@ -1,5 +1,8 @@
 
 Vue.component('todo-item', {
+    // This component is a <li> that is passed into the view app
+    // and uses $emit to pass an event back to the parent.
+    // It's registered globally in the app and can be acceessed by any Vue instance
     template: `<li>{{todo.text}} <button v-on:click="$emit('delete-item')">{{buttonText}}</button></li>`,
     props: ['todo'],
     data: function () {
