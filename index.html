@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>vue</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="vuesource.js"></script>
 </head>
 <body>   
-    <div id="app">
-        <button v-on:click="addItemToList">add</button>
-        <button v-on:click="deleteItem">delete</button>
-        <input v-model="todoItem">
-        <div style='height:24px'>{{todoItem}}</div>
+    <div style='margin-left:100px 'id="app">
+        <form @submit.prevent='addItemToList'>
+          <input v-model="todoItem">
+          <button type='submit'>add</button>
+        </form>
         <ol>
             <todo-item
                 v-for='item in todoList'
                 v-bind:todo='item'
                 v-bind:key='item.id'
-            ></todo-item>
+                v-on:delete-item='deleteItem(item.id)'
+            ></todo-item>   
         </ol>
     </div>    
-
 </body>
 <script type="text/javascript" src="app.js"></script>
 </html>
